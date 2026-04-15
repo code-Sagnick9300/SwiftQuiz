@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Online Quiz App</title>
+</head>
+<body>
+    <header class="app-header">
+        <h1>Online Timer Enabled Quiz App</h1>
+    </header>
+    <div class="container">
+        <h1>Start Quiz</h1>
+
+        <label for="subject">Subject Name</label>
+        <input type="text" id="subject" placeholder="e.g. Math, History..." required />
+
+        <label for="duration">Test Duration</label>
+        <select name="" id="duration" required>
+            <option value=""  >Select Test duration(minutes)</option>
+            <option value="10">10 minutes</option>
+            <option value="20">20 minutes</option>
+            <option value="30">30 minutes</option>
+            <option value="60">60 minutes</option>
+        </select>
+
+        <label for="">Choose PDF or JPG</label>
+        <input type="file" name="" id="quizfile" accept=".pdf,.jpg,.jpeg">
+        <label for="quizfile" class="file-btn">Choose Question Paper</label>
+        <div class="file-name" id="fileName">No file selected</div>
+
+        <button class="start-btn">Start Test</button>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
