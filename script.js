@@ -86,6 +86,24 @@ startBtn.addEventListener('click', () => {
           padding-top: 35vh;
           z-index: 2000;
         }
+        #back-btn {
+          display: none;
+          position: fixed;
+          bottom: 30px;
+          left: 50%;
+          transform: translateX(-50%);
+          padding: 14px 32px;
+          font-size: 18px;
+          background: #3498db;
+          color: white;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+          z-index: 2100;
+        }
+        #back-btn:hover {
+          background: #2980b9;
+        }
       </style>
     </head>
     <body>
@@ -95,12 +113,17 @@ startBtn.addEventListener('click', () => {
         ? `<img id="viewer" src="${fileURL}" alt="Quiz Paper">` 
         : `<iframe id="viewer" src="${fileURL}"></iframe>`}
       
-      <div id="done">Your test is completed!</div>
+      <div id="done">
+        Your test is completed!
+        <button id="back-btn">Back to Setup</button>
+      </div>
 
       <script>
         let timeLeft = ${duration} * 60;
+        let closeAttempts = 0;
         const timerEl = document.getElementById('timer');
         const doneEl = document.getElementById('done');
+        const backBtn = document.getElementById('back-btn');
         const viewer = document.getElementById('viewer');
 
         const countdown = setInterval(() => {
