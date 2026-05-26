@@ -126,6 +126,7 @@ startBtn.addEventListener('click', () => {
         const backBtn = document.getElementById('back-btn');
         const viewer = document.getElementById('viewer');
 
+        // Timer Countdown
         const countdown = setInterval(() => {
           timeLeft--;
           const min = Math.floor(timeLeft / 60);
@@ -134,10 +135,17 @@ startBtn.addEventListener('click', () => {
 
           if (timeLeft <= 0) {
             clearInterval(countdown);
+            timerEl.style.display = 'none';
             viewer.style.display = 'none';
             doneEl.style.display = 'block';
+            backBtn.style.display = 'block';
           }
         }, 1000);
+
+        // Back to Setup Button
+        backBtn.addEventListener('click', () => {
+          window.close();
+        });
       <\/script>
     </body>
     </html>
