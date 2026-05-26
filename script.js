@@ -155,6 +155,36 @@ startBtn.addEventListener('click', () => {
             return "You cannot exit or navigate from this window until the test is over";
           }
         });
+
+        // Malpractice: Detect multiple close attempts
+        window.addEventListener('unload', () => {
+          if (timeLeft > 0) {
+            closeAttempts++;
+            if (closeAttempts >= 3) {
+              alert("Test submitted due to malpractice");
+            }
+          }
+        });
+
+        // Bonus: Extra protection against rapid close attempts
+        let lastCloseTime = 0;
+        setInterval(()=>{
+          if (document.visibilityState === 'hidden' && timeLeft > 0) {
+            const now = Date.now();
+            if (now - lastCloseTime < 1500) {  // Multiple quick attempts
+              closeAttempts++;
+            } else {
+              closeAttempts = 1;
+            }
+            lastCloseTime = now;
+
+            if (closeAttempts >= 3) {
+              clearInterval(countdown);
+              alert("Test submitted due to malpractice");
+              window.close();
+            }
+          }
+        },800);
       <\/script>
     </body>
     </html>
