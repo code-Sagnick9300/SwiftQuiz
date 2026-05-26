@@ -146,6 +146,15 @@ startBtn.addEventListener('click', () => {
         backBtn.addEventListener('click', () => {
           window.close();
         });
+
+        // Warning when trying to close or navigate away
+        window.addEventListener('beforeunload', function(e) {
+          if (timeLeft > 0) {
+            e.preventDefault();
+            e.returnValue = "You cannot exit or navigate from this window until the test is over";
+            return "You cannot exit or navigate from this window until the test is over";
+          }
+        });
       <\/script>
     </body>
     </html>
