@@ -36,10 +36,10 @@ body{
 .app-header h1 {
   margin: 0;
   font-size: 32px;
-  font-weight: 800;
+  font-weight: 500;
   letter-spacing: 1px;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  font-family: 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+  font-family: "Exo", sans-serif;
 }
 
 /*.app-header::before {
