@@ -120,6 +120,30 @@ input[type="file"] {
     display: none;
 }
 
+select#duration {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 6px;
+    font-size: 16px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    cursor: pointer;
+    appearance: none;
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+}
+
+select#duration option {
+    background-color: #f8e7e7;     /* Light pink / cream color */
+    color: #333;
+    padding: 10px 12px;
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-bottom: 1px solid #eee;
+}
+
 .file-btn{
     background: #6c5ce7;
     color: white;
