@@ -144,6 +144,15 @@ select#duration option {
     border-bottom: 1px solid #eee;
 }
 
+#duration option:hover {
+    background-color: #f0d4d4;     /* Slightly darker hover effect */
+}
+
+#duration option:checked {
+    background-color: #e8c4c4;
+    font-weight: 600;
+}
+
 .file-btn{
     background: #6c5ce7;
     color: white;
