@@ -153,6 +153,12 @@ select#duration option {
     font-weight: 600;
 }
 
+/* Make dropdown list taller when opened */
+select#duration:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(236, 79, 158, 0.3);
+}
+
 .file-btn{
     background: #6c5ce7;
     color: white;
